@@ -1,18 +1,20 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <ParcelTable></ParcelTable>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import ParcelTable from '../components/ParcelTable'
 
 export default {
   name: 'home',
   components: {
-    HelloWorld
+    ParcelTable,
+  },
+  created(){
+    this.$store.dispatch('getAllParcels');
   }
 }
 </script>
